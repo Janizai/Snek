@@ -16,7 +16,7 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.10'  # pick a version you used locally
+          python-version: '3.10' 
 
       - name: Install dependencies
         run: |
@@ -29,10 +29,10 @@ jobs:
           # --onefile makes a single exe.
           # --windowed prevents console; remove if you want console.
           # Add data: "src/coin.png;src" (semicolon required on Windows)
-          pyinstaller --onefile --windowed --add-data "src/coin.png;src" snake.py
+          pyinstaller --onefile --windowed --add-data "src/coin.png;src" src/snake.py
 
       - name: Package artifact
         uses: actions/upload-artifact@v4
         with:
-          name: snake-windows-exe
+          name: snek
           path: dist/*.exe
